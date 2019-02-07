@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    username: root
+    password: 123
+    filters: stat, wall
+    type: com.alibaba.druid.pool.DruidDataSource
+    dbcp2:
+      max-total: 100
+      min-idle: 5
+      initial-size: 5
+      max-conn-lifetime-millis: 2000
+    schema: classpath:db/schemas.sql
+    data: classpath:db/data.sql
+server:
+  port: 80
